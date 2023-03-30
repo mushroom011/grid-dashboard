@@ -1,0 +1,303 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+/*
+  VARIABLES
+*/
+
+:root {
+  --main-text-color: #716E76;
+  --base-bg-color: #ffffff;
+  --primary-bg-color: #EADDFF;
+  --secondary-bg-color: #6750A4;
+  --main-gap: 1.25rem;
+}
+
+
+/*
+  MAIN
+*/
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  height: 100vh;
+}
+
+/*
+  HEADER
+*/
+
+.header {
+  grid-column: 2 / -1;
+  padding: .6rem 2rem;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: var(--main-gap);
+}
+
+.search {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
+.header .search__btn {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0 .5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .search__input {
+  border: none;
+  background-color: var(--primary-bg-color);
+  height: 1.45rem;
+  border-radius: 1.25rem;
+  padding: 0 .6rem;
+}
+
+.header .search__input:focus {
+  border: none;
+}
+
+.header .search__input:focus-visible  {
+  outline: none;
+}
+
+.header .user-info {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: var(--main-gap);
+}
+
+.header .user-info .bell {
+  font-size: 1.25rem;
+  justify-self: end;
+}
+
+.header .user-info, .user-greeting {
+  font-weight: bold;
+}
+
+.header .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: var(--main-gap);
+}
+
+.header .btn {
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: none;
+  color: #ffffff;
+  background-color: var(--secondary-bg-color);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-greeting {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+}
+
+.user-greeting .greeting {
+  align-self: center;
+}
+
+.user-greeting .user-avatar--large {
+  color: var(--main-text-color);
+  font-size: 4.3rem;
+}
+
+.user-greeting .greeting__username {
+  font-size: 1.25rem;
+}
+
+.user-avatar--medium {
+  font-size: 3rem;
+  color: var(--main-text-color);
+}
+
+/*
+  MAIN NAVIGATION
+*/
+
+.main-navigation {
+  background-color: var(--secondary-bg-color);
+
+  grid-row: 1 / 3;
+  padding: 1.25rem;
+
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 1.8rem;
+}
+
+.main-navigation .logo svg {
+  font-size: 2.5rem;
+}
+
+.main-navigation .logo span {
+  font-size: 1.5rem;
+}
+
+.main-navigation ul {
+  display: grid;
+  gap: var(--main-gap);
+}
+
+.main-navigation a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 5fr;
+}
+
+/*
+  MAIN CONTENT
+*/
+
+.main-content {
+  background-color: var(--primary-bg-color);
+  grid-column: 2 / -1;
+
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 1.25rem;
+  gap: var(--main-gap);
+}
+
+.projects .cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--main-gap);
+}
+
+.projects__title {
+  margin-bottom: 1.25rem;
+}
+
+/*
+  CARDS
+*/
+
+.cards .card {
+  background-color: #ffffff;
+  padding: 1.25rem;
+  border-left: 4px solid var(--secondary-bg-color);
+  border-radius: 4px;
+  min-height: 12rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card__title {
+  margin-bottom: .25rem;
+}
+
+.card__text {
+  flex-grow: 1;
+  color: var(--main-text-color);
+}
+
+.card__footer {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--main-gap);
+}
+
+.card__footer {
+  font-size: 1.3rem;
+}
+
+.card__footer .star {
+  justify-self: end;
+}
+
+/*
+  SIDEBAR
+*/
+
+.sidebar__title {
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.sidebar__title:first-child {
+  margin-top: 0;
+}
+
+/*
+  ANNOUNCEMENTS
+*/
+
+.announcements {
+  display: grid;
+  gap: var(--main-gap);
+  grid-template-columns: 1fr;
+}
+
+.announcements, .trending {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 1.25rem;
+}
+
+.announcement__title {
+  margin-bottom: .25rem;
+}
+
+.announcement__text {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--primary-bg-color);
+  color: var(--main-text-color);
+}
+
+.announcement:last-child .announcement__text {
+  border-bottom: none;
+}
+
+/*
+  TRENDING
+*/
+
+.trending {
+  display: grid;
+  gap: 1rem;
+}
+
+.trend {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.trend__author {
+  color: var(--main-text-color);
+}
